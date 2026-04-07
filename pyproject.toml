@@ -1,0 +1,14 @@
+[project]
+name = "flask-oxide"
+version = "0.1.0"
+authors = [
+  { name = "tom96da", email = "pascal.tom96@gmail.com" },
+]
+description = "Flask extension for seamless Rust integration."
+readme = "README.md"
+requires-python = ">=3.14.3"
+license = { text = "MIT" }
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/tom96da/Flask-Oxide.git"

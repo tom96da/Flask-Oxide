@@ -1,0 +1,53 @@
+{
+  "name": "DevContainer for Flask-Oxide",
+  "image": "mcr.microsoft.com/devcontainers/base:bookworm",
+  "remoteUser": "vscode",
+
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.14"
+    }
+  },
+  "remoteEnv": {
+    "LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}",
+    "VIRTUAL_ENV": "/home/vscode/.venv",
+    "UV_PROJECT_ENVIRONMENT": "/home/vscode/.venv",
+    "FLASK_ENV": "development",
+    "FLASK_DEBUG": "1"
+  },
+
+  "onCreateCommand": "/bin/sh .devcontainer/setup.sh install_deps",
+
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.languageServer": "Pylance",
+        "python.defaultInterpreterPath": "~/.venv/bin/python",
+        "[python]": {
+          "editor.rulers": [88],
+          "editor.formatOnSave": true,
+          "editor.codeActionsOnSave": {
+            "source.fixAll.ruff": "explicit",
+            "source.organizeImports": "explicit"
+          },
+          "editor.defaultFormatter": "charliermarsh.ruff"
+        },
+        "python.useEnvironmentsExtension": false,
+        "python.terminal.activateEnvironment": false
+      },
+
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "tamasfe.even-better-toml",
+        "charliermarsh.ruff",
+
+        "editorconfig.editorconfig",
+        "shardulm94.trailing-spaces",
+        "mhutchie.git-graph",
+        "eamodio.gitlens"
+      ],
+      "ignoreExtensions": ["*"]
+    }
+  }
+}

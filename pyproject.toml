@@ -12,3 +12,41 @@ dependencies = []
 
 [project.urls]
 Repository = "https://github.com/tom96da/Flask-Oxide.git"
+
+
+[tool.ruff.lint]
+# refer to https://docs.astral.sh/ruff/settings/#lint
+ignore = [
+  "COM812",
+  "INP001",
+  "D203",
+  "D213",
+  "TRY400",
+]
+preview = true
+select = ["ALL"]
+
+[tool.ruff.lint.isort]
+# refer to https://docs.astral.sh/ruff/settings/#lintisort
+combine-as-imports = true
+lines-after-imports = 2
+lines-between-types = 1
+
+[tool.ruff.lint.pylint]
+max-args = 6
+
+[tool.ruff.analyze]
+# refer to https://docs.astral.sh/ruff/settings/#analyze
+detect-string-imports = true
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.format]
+# refer to https://docs.astral.sh/ruff/settings/#format
+preview = true
+skip-magic-trailing-comma = false
+
+
+[tool.pyright]
+typeCheckingMode =  "standard"
